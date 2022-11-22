@@ -5,21 +5,34 @@ This repository contains examples of code for building recommendation system wit
 
 There are five key tasks:
 * Prepare Data: Preparing and loading data for each recommender algorithm
-* Explore Data: Perform Exploratory Data Analysis
-* Model: Building models using different recommender algorithms such as Association Rules, Content Based, Collaborative Filtering (Matrix Factorization), Hybrid.
+* Explore and Transform Data: Perform Exploratory Data Analysis and data structures transfrmation
+* Model: Building models using different recommender algorithms such as Association Rules, Collaborative Filtering (Matrix Factorization), Content Based, Hybrid.
 * Evaluate: Evaluating algorithms with offline metrics
 * Model Select and Optimize: Tuning and optimizing hyperparameters for recommender models
 
 
-# Prepare Data
-Dataset: Brazilian E-Commerce Public Dataset by Olist - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-1. Merge all 9 tables into 1 Master table
-2. Filter Master table: to Delivered orders (to have final review score) and with at least 2 products per customer (not necesseraly within 1 order) to have the ability to run performance metrics 
+# Prepare Data 
+1. The initial dataset: Brazilian E-Commerce Public Dataset by Olist - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+2. Upload 9 tables to the notebook and merge into 1 Master table according to Data Schema
 
-Explore Data: 
-1. Check data for null values and duplicates and remove if any
-2. Check numerical and categorical data distribution and correlation
+# Explore and Transform Data: 
+1. Check data for null values and duplicates and remove if any.
+2. Check values for correlation and distribution. 
+3. Transform Master table: 
+ * filter by order_status = Delivered - to have final review score as there are orders with multiple reviews
+ * filter by at least 3 products per customer (not necesseraly within 1 order)  - mainly to reduce processing time 
+ 4. Extract Features: 
+ * Product features - there is only 1 feature - "product category" that will be taken into account. Other product attributes (like weight, length, height, width) are not of interest. 
+ * Customer features - the dataset does not provide any personal characteristics (like age, gender, occupation, interests). The only customer data is related to geography (state, city, zipcode), which might be used for "customer cold start" problem - for a new customer with zero purchases, recommender system might offer "the most popular items in your region". 
+ 5. Define response variable - review_score (1-5). 
+ Link to the result of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
 
+# Build Models: 
+1. Matrix Factorization - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/2_Collaborative_Filtering_Matrix_Factorization.ipynb
+2. Association Rules - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/3_ASSOCIATION_RULES.ipynb
+3. Content Based - TBD
+4. Hybrid - TBD
+5. Compare the results of 4 models (run performance metrics). 
 
 
 

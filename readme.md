@@ -10,6 +10,11 @@ There are five key tasks:
 * Evaluate: Evaluating algorithms with offline metrics
 * Model Select and Optimize: Tuning and optimizing hyperparameters for recommender models
 
+# Content of the repository:
+ 1. Results of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
+ 2. Initial results of Collaborative Filtering (Matrix Factorization) algorithm - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/2_Collaborative_Filtering_Matrix_Factorization.ipynb
+ 3. . Initial results of Association Rules algorithm - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/3_ASSOCIATION_RULES.ipynb
+
 
 # Prepare Data 
 1. The initial dataset: Brazilian E-Commerce Public Dataset by Olist - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce

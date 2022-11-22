@@ -25,7 +25,7 @@ There are five key tasks:
  * Product features - there is only 1 feature - "product category" that will be taken into account. Other product attributes (like weight, length, height, width) are not of interest. 
  * Customer features - the dataset does not provide any personal characteristics (like age, gender, occupation, interests). The only customer data is related to geography (state, city, zipcode), which might be used for "customer cold start" problem - for a new customer with zero purchases, recommender system might offer "the most popular items in your region". 
  5. Define response variable - review_score (1-5). 
- Link to the result of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
+ 6. Link to the results of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
 
 # Build Models: 
 1. Matrix Factorization - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/2_Collaborative_Filtering_Matrix_Factorization.ipynb
@@ -46,3 +46,9 @@ There are five key tasks:
 6.	Mingang Chena, Pan Liu (2017), “Performance Evaluation of Recommender Systems”, http://www.ijpe-online.com/EN/abstract/abstract3798.shtml
 7.	Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor (2011), “Recommender Systems Handbook”, Springer Science Business Media.
 
+# Code references:
+1. https://medium.com/analytics-vidhya/matrix-factorization-as-a-recommender-system-727ee64683f0
+2. https://www.kaggle.com/code/washingtongold/matrix-factorization-on-movie-ratings-dataset/notebook?scriptVersionId=30187124
+3. https://www.kaggle.com/code/washingtongold/movie-data-conversion/notebook
+4. https://colab.research.google.com/drive/1w92d6_BjrF5nVLoFhD1Oa6dV3DgKra8G?usp=sharing#scrollTo=UPSHx5UANsIb
+5. https://www.udemy.com/course/building-recommender-systems-with-machine-learning-and-ai/learn/lecture/11401946#overview

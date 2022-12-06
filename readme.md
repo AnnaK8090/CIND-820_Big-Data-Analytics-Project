@@ -6,39 +6,9 @@ This repository contains examples of code for building recommendation system wit
 There are five key tasks:
 * Prepare Data: Preparing and loading data for each recommender algorithm
 * Explore and Transform Data: Perform Exploratory Data Analysis and data structures transfrmation
-* Model: Building models using different recommender algorithms such as Association Rules, Collaborative Filtering (Matrix Factorization), Content Based, Hybrid.
+* Model: Building models using different recommender algorithms such as User and Item Based CF, Matrix Factorization.
 * Evaluate: Evaluating algorithms with offline metrics
 * Model Select and Optimize: Tuning and optimizing hyperparameters for recommender models
-
-# Content of the repository:
- 1. Results of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
- 2. Initial results of Collaborative Filtering (Matrix Factorization) algorithm - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/2_Collaborative_Filtering_Matrix_Factorization.ipynb
- 3. . Initial results of Association Rules algorithm - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/3_ASSOCIATION_RULES.ipynb
-
-
-# Prepare Data 
-1. The initial dataset: Brazilian E-Commerce Public Dataset by Olist - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-2. Upload 9 tables to the notebook and merge into 1 Master table according to Data Schema
-
-# Explore and Transform Data: 
-1. Check data for null values and duplicates and remove if any.
-2. Check values for correlation and distribution. 
-3. Transform Master table: 
- * filter by order_status = Delivered - to have final review score as there are orders with multiple reviews
- * filter by at least 3 products per customer (not necesseraly within 1 order)  - mainly to reduce processing time 
- 4. Extract Features: 
- * Product features - there is only 1 feature - "product category" that will be taken into account. Other product attributes (like weight, length, height, width) are not of interest. 
- * Customer features - the dataset does not provide any personal characteristics (like age, gender, occupation, interests). The only customer data is related to geography (state, city, zipcode), which might be used for "customer cold start" problem - for a new customer with zero purchases, recommender system might offer "the most popular items in your region". 
- 5. Define response variable - review_score (1-5). 
- 6. Link to the results of Data Preparation, Analysis and Transformation - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/1_basic_transformations.ipynb
-
-# Build Models: 
-1. Matrix Factorization - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/2_Collaborative_Filtering_Matrix_Factorization.ipynb
-2. Association Rules - https://github.com/AnnaK8090/CIND-820_Big-Data-Analytics-Project/blob/main/3_ASSOCIATION_RULES.ipynb
-3. Content Based - TBD
-4. Hybrid - TBD
-5. Compare the results of 4 models (run performance metrics). 
-
 
 
 # References
@@ -50,10 +20,33 @@ There are five key tasks:
 5.	Faxin Qi, Xiangrong Tong, Lei Yu, Yingjie Wang (2019) “Personalized project recommendations: using reinforcement learning”, https://jwcn-eurasipjournals.springeropen.com/articles/10.1186/s13638-019-1619-6 
 6.	Mingang Chena, Pan Liu (2017), “Performance Evaluation of Recommender Systems”, http://www.ijpe-online.com/EN/abstract/abstract3798.shtml
 7.	Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor (2011), “Recommender Systems Handbook”, Springer Science Business Media.
+8.	P. H. Aditya, I. Budi, Q. Munajat (2016), “A Comparative Analysis of Memory-based and Model-based Collaborative Filtering on the Implementation of Recommender System for Ecommerce in Indonesia : A Case Study PT X P. H. Aditya, I. Budi, Q. Munajat”
 
-# Code references:
-1. https://medium.com/analytics-vidhya/matrix-factorization-as-a-recommender-system-727ee64683f0
-2. https://www.kaggle.com/code/washingtongold/matrix-factorization-on-movie-ratings-dataset/notebook?scriptVersionId=30187124
-3. https://www.kaggle.com/code/washingtongold/movie-data-conversion/notebook
-4. https://colab.research.google.com/drive/1w92d6_BjrF5nVLoFhD1Oa6dV3DgKra8G?usp=sharing#scrollTo=UPSHx5UANsIb
-5. https://www.udemy.com/course/building-recommender-systems-with-machine-learning-and-ai/learn/lecture/11401946#overview
+# Code References
+
+1.	https://en.wikipedia.org/wiki/Recommender_system
+2.	https://developers.google.com/machine-learning/recommendation/collaborative/basics 
+3.	https://www.sciencedirect.com/science/article/pii/S1110866515000341#s0160
+4.	https://towardsdatascience.com/recommendation-systems-explained-a42fc60591ed
+5.	https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd 
+6.	https://medium.com/web-mining-is688-spring-2021/e-commerce-recommendation-engine-with-collaborative-filtering-cb19cd542c18 
+7.	https://www.perzonalization.com/blog/recommender-systems-in-ecommerce/ 
+8.	https://www.ethanrosenthal.com/2015/11/02/intro-to-collaborative-filtering/
+9.	https://www.ethanrosenthal.com/2016/01/09/explicit-matrix-factorization-sgd-als/
+10.	https://medium.com/analytics-vidhya/matrix-factorization-as-a-recommender-system-727ee64683f0
+11.	https://www.kaggle.com/code/washingtongold/matrix-factorization-on-movie-ratings-dataset/notebook?scriptVersionId=30187124
+12.	https://www.kaggle.com/code/washingtongold/movie-data-conversion/notebook
+13.	https://colab.research.google.com/drive/1w92d6_BjrF5nVLoFhD1Oa6dV3DgKra8G?usp=sharing#scrollTo=UPSHx5UANsIb
+14.	https://www.udemy.com/course/building-recommender-systems-with-machine-learning-and-ai/learn/lecture/11401946#overview
+15.	https://towardsdatascience.com/evaluation-metrics-for-recommender-systems-df56c6611093
+16.	https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-2-alternating-least-square-als-matrix-4a76c58714a1#:~:text=Alternating%20Least%20Square%20(ALS)%20is,larges%2Dscale%20collaborative%20filtering%20problems.
+17.	https://buomsoo-kim.github.io/recommender%20systems/2020/09/21/Recommender-systems-collab-filtering-11.md/
+18.	https://www.kaggle.com/code/gspmoreira/recommender-systems-in-python-101/notebook
+19.	https://buomsoo-kim.github.io/recommender%20systems/2020/09/06/Recommender-systems-collab-filtering-8.md/
+20.	https://towardsdatascience.com/recsys-series-part-4-the-7-variants-of-matrix-factorization-for-collaborative-filtering-368754e4fab5
+21.	https://neptune.ai/blog/recommender-systems-metrics
+22.	https://medium.com/analytics-vidhya/matrix-factorization-as-a-recommender-system-727ee64683f0
+23.	https://medium.com/mlearning-ai/recommendation-system-using-collborative-filtering-90e26cbfb4ed
+24.	https://github.com/microsoft/recommenders/blob/main/examples/02_model_collaborative_filtering/surprise_svd_deep_dive.ipynb
+25.	Brazilian ecommerce public dataset of orders made at Olist Store - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce 
+
